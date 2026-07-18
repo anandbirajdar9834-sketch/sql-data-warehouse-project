@@ -1,1 +1,36 @@
+/*
+=============================================================
+Create Data Warehouse Architecture
+=============================================================
+Script Purpose:
+    This script sets up a Medallion Data Warehouse Architecture in MySQL. 
+    It checks for and drops existing layers, then creates three distinct 
+    databases to represent the data pipeline stages: 'dw_bronze', 
+    'dw_silver', and 'dw_gold'.
+	
+WARNING:
+    Running this script will drop the 'dw_bronze', 'dw_silver', and 
+    'dw_gold' databases if they exist. All data within them will be 
+    permanently deleted. Proceed with caution and ensure you have 
+    proper backups before running this script.
+*/
 
+-- =============================================================
+-- 1. Drop Existing Databases (Clean Slate)
+-- =============================================================
+DROP DATABASE IF EXISTS dw_bronze;
+DROP DATABASE IF EXISTS dw_silver;
+DROP DATABASE IF EXISTS dw_gold;
+
+-- =============================================================
+-- 2. Create Medallion Layer Databases
+-- =============================================================
+
+-- Bronze Layer: Raw data landing zone
+CREATE DATABASE dw_bronze;
+
+-- Silver Layer: Cleansed and conformed data
+CREATE DATABASE dw_silver;
+
+-- Gold Layer: Business-ready reporting and BI data
+CREATE DATABASE dw_gold;
