@@ -1,0 +1,33 @@
+/*
+===============================================================================
+Load Bronze Layer Data (MySQL)
+===============================================================================
+Script Purpose:
+    This script documents the loading of raw CSV files into the Bronze layer
+    tables using the MySQL Workbench Table Data Import Wizard.
+
+    The source data was imported manually through the MySQL Workbench GUI.
+
+Import Method:
+    MySQL Workbench
+    → Right-click Table
+    → Table Data Import Wizard
+    → Select CSV File
+    → Map Columns
+    → Finish
+
+Imported Tables:
+    ✔ crm_cust_info
+    ✔ crm_prd_info
+    ✔ crm_sales_details
+    ✔ erp_cust_az12
+    ✔ erp_loc_a101
+    ✔ erp_px_cat_g1v2
+===============================================================================
+*/
+
+USE dw_bronze;
+
+-- Data imported using MySQL Workbench Table Data Import Wizard.
+-- No SQL statements are required because the import was performed
+-- through the graphical interface.
